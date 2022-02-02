@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="626.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.setup.CategoryAndItemCreateController">
+	<children>
+		<HBox layoutX="57.0" layoutY="167.0" prefHeight="600.0" prefWidth="1000.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<children>
+				<VBox prefHeight="600.0" prefWidth="446.0" spacing="5.0">
+					<children>
+						<VBox prefHeight="138.0" prefWidth="431.0">
+							<children>
+								<HBox prefHeight="105.0" prefWidth="431.0">
+									<children>
+										<VBox prefHeight="95.0" prefWidth="170.0" spacing="5.0">
+											<children>
+												<Label prefHeight="28.0" prefWidth="167.0" text="Category Id" />
+												<Label prefHeight="28.0" prefWidth="167.0" text="Parent Category Name" />
+												<Label prefHeight="28.0" prefWidth="167.0" text="Category Name" />
+											</children>
+										</VBox>
+										<VBox prefHeight="105.0" prefWidth="330.0" spacing="5.0">
+											<children>
+												<TextField fx:id="txtCategoryId" editable="false" prefHeight="28.0" prefWidth="239.0" />
+												<VBox fx:id="vBoxParentCategory">
+													<children>
+														<ComboBox prefHeight="28.0" prefWidth="347.0" />
+													</children>
+												</VBox>
+												<TextField fx:id="txtCategoryName" prefHeight="28.0" />
+											</children>
+										</VBox>
+									</children>
+								</HBox>
+								<HBox alignment="TOP_CENTER" prefHeight="35.0" prefWidth="431.0" spacing="10.0">
+									<children>
+										<Button fx:id="btnCategoryAdd" mnemonicParsing="false" onAction="#categoryAddAction" prefWidth="80.0" text="Add" />
+										<Button fx:id="btnCategoryEdit" mnemonicParsing="false" onAction="#categoryEditAction" prefWidth="80.0" text="Edit" />
+										<Button fx:id="btnCategoryRefresh" mnemonicParsing="false" onAction="#categoryRefreshAction" prefWidth="80.0" text="Refresh" />
+									</children>
+								</HBox>
+							</children>
+							<VBox.margin>
+								<Insets top="30.0" />
+							</VBox.margin>
+						</VBox>
+						<AnchorPane prefHeight="377.0" prefWidth="430.0">
+							<children>
+								<TreeView fx:id="treeCategory" layoutX="121.0" layoutY="34.0" onMouseClicked="#treeClickAction" prefHeight="409.0" prefWidth="431.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+							</children>
+							<VBox.margin>
+								<Insets bottom="30.0" />
+							</VBox.margin>
+						</AnchorPane>
+					</children>
+					<HBox.margin>
+						<Insets bottom="10.0" left="10.0" top="10.0" />
+					</HBox.margin>
+				</VBox>
+				<AnchorPane prefHeight="600.0" prefWidth="559.0">
+					<children>
+						<TabPane layoutX="125.0" layoutY="32.0" prefHeight="546.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="31.0">
+							<tabs>
+								<Tab text="Item Create">
+									<content>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+											<children>
+												<VBox layoutX="115.0" layoutY="25.0" prefHeight="551.0" prefWidth="544.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+													<children>
+														<HBox prefHeight="507.0" prefWidth="542.0" spacing="5.0">
+															<children>
+																<VBox prefHeight="500.0" prefWidth="113.0" spacing="3.0">
+																	<children>
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Item Id:">
+																			<VBox.margin>
+																				<Insets top="5.0" />
+																			</VBox.margin>
+																		</Label>
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Item Code:" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Category:" />
+																		<Label prefHeight="28.0" prefWidth="123.0" text="Brand" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Item Name:" />
+																		<Label prefHeight="28.0" prefWidth="113.0" text="Projected Item Name" wrapText="true" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Unit:" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Purchase Price:" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Sale Price:" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Opening Quantity:" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Reorder Quantity:" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Stock" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Description:" />
+																		<Label prefHeight="28.0" prefWidth="104.0" text="Status:">
+																			<VBox.margin>
+																				<Insets top="22.0" />
+																			</VBox.margin>
+																		</Label>
+																	</children>
+																</VBox>
+																<VBox prefHeight="485.0" prefWidth="329.0" spacing="3.0">
+																	<children>
+																		<TextField fx:id="txtItemId" editable="false" prefHeight="28.0" prefWidth="269.0">
+																			<VBox.margin>
+																				<Insets top="5.0" />
+																			</VBox.margin>
+																		</TextField>
+																		<HBox fx:id="hBoxItemCode" spacing="5.0">
+																			<children>
+																				<ComboBox prefHeight="28.0" prefWidth="299.0" />
+																				<Button fx:id="btnItemCodeAdd" mnemonicParsing="false" prefHeight="28.0" prefWidth="28.0" text="+" />
+																			</children>
+																		</HBox>
+																		<VBox fx:id="vBoxCategory">
+																			<children>
+																				<ComboBox prefHeight="28.0" prefWidth="335.0" />
+																			</children>
+																		</VBox>
+																		<VBox fx:id="vBoxBrand">
+																			<children>
+																				<ComboBox prefHeight="28.0" prefWidth="347.0" />
+																			</children>
+																		</VBox>
+																		<VBox fx:id="vBoxItemName">
+																			<children>
+																				<ComboBox prefHeight="28.0" prefWidth="335.0" />
+																			</children>
+																		</VBox>
+																		<TextField fx:id="txtProjectedName" prefHeight="28.0" />
+																		<HBox fx:id="HBoxUnit" prefHeight="28.0" prefWidth="329.0" spacing="5.0">
+																			<children>
+																				<ComboBox prefHeight="28.0" prefWidth="108.0" />
+																				<TextField fx:id="txtUnitQty" prefHeight="28.0" prefWidth="49.0" />
+																				<Button fx:id="btnUnitAdd" mnemonicParsing="false" onAction="#btnUnitAddAction" prefHeight="28.0" prefWidth="28.0" text="+" />
+																				<ComboBox fx:id="cmbCreatedUnit" prefHeight="28.0" prefWidth="127.0" />
+																			</children>
+																		</HBox>
+																		<TextField fx:id="txtPurchasePrice" prefHeight="28.0" />
+																		<TextField fx:id="txtSalesPrice" prefHeight="28.0" />
+																		<TextField fx:id="txtOpeningQty" prefHeight="28.0" />
+																		<TextField fx:id="txtReorderQty" prefHeight="28.0" />
+																		<TextField fx:id="txtStock" editable="false" prefHeight="28.0" />
+																		<TextArea fx:id="txtDescription" prefHeight="50.0" prefWidth="329.0" />
+                                                      <HBox spacing="5.0">
+                                                         <children>
+                                                            <ComboBox fx:id="cmbStatus" prefHeight="28.0" prefWidth="129.0" />
+                                                            <Label prefHeight="28.0" prefWidth="65.0" text="Item Type">
+                                                               <HBox.margin>
+                                                                  <Insets left="5.0" />
+                                                               </HBox.margin>
+                                                            </Label>
+      																		<ComboBox fx:id="cmbItemType" prefHeight="28.0" prefWidth="151.0" />
+                                                         </children>
+                                                      </HBox>
+																	</children>
+																</VBox>
+															</children>
+														</HBox>
+														<HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="542.0" spacing="10.0">
+															<children>
+																<Button fx:id="btnItemSave" mnemonicParsing="false" onAction="#btnItemSaveAction" prefHeight="28.0" prefWidth="80.0" text="Save">
+																	<HBox.margin>
+																		<Insets />
+																	</HBox.margin>
+																</Button>
+																<Button fx:id="btnItemEdit" mnemonicParsing="false" onAction="#btnItemEditAction" prefHeight="28.0" prefWidth="80.0" text="Edit" />
+																<Button fx:id="btnItemRefresh" mnemonicParsing="false" onAction="#btnItemRefresh" prefHeight="28.0" prefWidth="80.0" text="Refresh" />
+															</children>
+														</HBox>
+													</children>
+												</VBox>
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+								<Tab text="Item List">
+									<content>
+										<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+											<children>
+												<TableView fx:id="tableItemList" layoutX="272.0" layoutY="126.0" onMouseClicked="#itemListTableClickAction" prefHeight="518.0" prefWidth="543.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+													<columns>
+														<TableColumn fx:id="itemIdCol" minWidth="40.0" prefWidth="53.0" text="Item Id" />
+														<TableColumn fx:id="categoryCol" minWidth="80.0" prefWidth="115.0" text="Category" />
+														<TableColumn fx:id="itemNameCol" minWidth="150.0" prefWidth="189.0" text="Projected Item Name" />
+														<TableColumn fx:id="priceCol" minWidth="80.0" prefWidth="100.0" text="Price" />
+														<TableColumn fx:id="activeStatusCol" prefWidth="84.0" text="Active Status" />
+													</columns>
+												</TableView>
+												<HBox alignment="BOTTOM_CENTER" layoutX="242.0" layoutY="488.0" prefHeight="30.0" prefWidth="541.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+													<children>
+														<Button fx:id="btnPrintItemList" mnemonicParsing="false" onAction="#btnPrintItemListAction" prefHeight="28.0" text="Print Item List" />
+													</children>
+												</HBox>
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+								<Tab text="Package Create">
+									<content>
+										<AnchorPane prefHeight="200.0" prefWidth="200.0">
+											<children>
+												<SplitPane dividerPositions="0.4444444444444444" prefHeight="546.0" prefWidth="542.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+													<items>
+														<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+															<children>
+																<TableView fx:id="tablePackageList" layoutX="5.0" layoutY="5.0" onMouseClicked="#packageListTableClickAction" prefHeight="486.0" prefWidth="228.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+																	<columns>
+																		<TableColumn fx:id="packageNameCol" minWidth="160.0" prefWidth="162.0" text="Package Name" />
+																		<TableColumn fx:id="packagePriceCol" minWidth="60.0" prefWidth="65.0" text="Price" />
+																	</columns>
+																</TableView>
+															</children>
+															<padding>
+																<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+															</padding>
+														</AnchorPane>
+														<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+															<children>
+																<VBox layoutX="4.0" layoutY="10.0" prefHeight="97.0" prefWidth="80.0" spacing="3.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0">
+																	<children>
+																		<Label prefHeight="28.0" prefWidth="109.0" text="Package ID" />
+																		<Label prefHeight="28.0" prefWidth="109.0" text="Category" />
+																		<Label prefHeight="28.0" prefWidth="109.0" text="Packege Name" />
+																	</children>
+																</VBox>
+																<VBox fx:id="vBoxPackageCatagory" layoutY="15.0" prefHeight="90.0" prefWidth="211.0" spacing="3.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+																	<children>
+																		<TextField fx:id="txtPackageId" editable="false" prefHeight="28.0" />
+																		<ComboBox prefHeight="28.0" prefWidth="215.0" />
+																		<TextField fx:id="txtPackegeName" prefHeight="28.0" />
+																	</children>
+																</VBox>
+																<TableView fx:id="tablePackageItemList" layoutX="10.0" layoutY="219.0" onMouseClicked="#packageItemTableClickAction" prefHeight="226.0" prefWidth="297.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="195.0">
+																	<columns>
+																		<TableColumn fx:id="packageItemNameCol" minWidth="95.0" prefWidth="98.0" text="Item Name" />
+																		<TableColumn fx:id="packageItemPriceCol" minWidth="35.0" prefWidth="36.0" text="Price" />
+																		<TableColumn fx:id="packageItemDiscountCol" minWidth="40.0" prefWidth="54.0" text="Discount" />
+																		<TableColumn fx:id="packageItemPackagePriceCol" minWidth="40.0" prefWidth="48.0" text="P. Price" />
+																		<TableColumn fx:id="packageItemQuantityCol" minWidth="25.0" prefWidth="25.0" text="Qty" />
+																		<TableColumn fx:id="packageTotalPriceCol" minWidth="70.0" prefWidth="70.0" text="Total Price" />
+																	</columns>
+																</TableView>
+																<VBox fx:id="vBoxPackageItemName" layoutX="12.0" layoutY="95.0" prefHeight="48.0" prefWidth="302.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+																	<children>
+																		<Label prefHeight="19.0" prefWidth="80.0" text="Item Name" />
+																		<ComboBox prefHeight="28.0" prefWidth="303.0" />
+																	</children>
+																</VBox>
+																<HBox layoutY="200.0" prefHeight="50.0" prefWidth="301.0" spacing="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="145.0">
+																	<children>
+																		<VBox prefHeight="50.0" prefWidth="74.0">
+																			<children>
+																				<Label prefHeight="17.0" prefWidth="41.0" text="Price" />
+																				<TextField fx:id="txtPrice" editable="false" prefHeight="28.0" prefWidth="74.0" />
+																			</children>
+																		</VBox>
+																		<VBox prefHeight="50.0" prefWidth="72.0">
+																			<children>
+																				<Label prefHeight="17.0" prefWidth="55.0" text="P. Price" />
+																				<TextField fx:id="txtPackagePrice" prefHeight="28.0" prefWidth="74.0" />
+																			</children>
+																		</VBox>
+																		<VBox prefHeight="50.0" prefWidth="49.0">
+																			<children>
+																				<Label text="Discount" />
+																				<TextField fx:id="txtDiscount" editable="false" prefHeight="28.0" prefWidth="53.0" />
+																			</children>
+																		</VBox>
+																		<VBox prefHeight="50.0" prefWidth="33.0">
+																			<children>
+																				<Label text="Qty" />
+																				<TextField fx:id="txtQty" prefHeight="28.0" prefWidth="74.0" />
+																			</children>
+																		</VBox>
+																		<Button fx:id="btnPackageItemAdd" mnemonicParsing="false" onAction="#packageItemAddAction" prefHeight="28.0" prefWidth="52.0" text="Add">
+																			<HBox.margin>
+																				<Insets top="17.0" />
+																			</HBox.margin>
+																		</Button>
+																	</children>
+																</HBox>
+																<HBox fx:id="hBoxActiveStatus" layoutY="430.0" prefHeight="30.0" prefWidth="302.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="425.0">
+																	<children>
+																		<Label prefHeight="28.0" prefWidth="72.0" text="Active Status:" />
+																		<ComboBox fx:id="cmbPackageActiveStatus" prefHeight="28.0" prefWidth="92.0" />
+																		<Label prefHeight="28.0" prefWidth="47.0" text="T.P.Price">
+																			<HBox.margin>
+																				<Insets left="5.0" />
+																			</HBox.margin>
+																		</Label>
+																		<TextField fx:id="txtTotalPackagePrice" editable="false" prefHeight="28.0" prefWidth="78.0" />
+																	</children>
+																</HBox>
+																<HBox alignment="TOP_CENTER" layoutY="462.0" prefHeight="28.0" prefWidth="304.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="457.0">
+																	<children>
+																		<Button fx:id="btnPackageSave" mnemonicParsing="false" onAction="#packageItemSaveAction" prefHeight="28.0" prefWidth="100.0" text="Save" />
+																		<Button fx:id="btnPackageEdit" mnemonicParsing="false" onAction="#packageItemEditAction" prefHeight="28.0" prefWidth="100.0" text="Edit" />
+																		<Button fx:id="btnPackageRefresh" mnemonicParsing="false" onAction="#packageItemRefreshAction" prefHeight="28.0" prefWidth="92.0" text="Refresh" />
+																	</children>
+																</HBox>
+															</children>
+															<padding>
+																<Insets left="2.0" right="2.0" top="5.0" />
+															</padding>
+														</AnchorPane>
+													</items>
+												</SplitPane>
+											</children>
+										</AnchorPane>
+									</content>
+								</Tab>
+								<Tab text="Raw Materials Indicate">
+									<content>
+										<AnchorPane prefHeight="200.0" prefWidth="200.0">
+											<children>
+																<VBox layoutX="6.0" layoutY="10.0" prefHeight="61.0" prefWidth="80.0" spacing="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+																	<children>
+																		<Label prefHeight="28.0" prefWidth="109.0" text="Item Name" />
+																		<Label prefHeight="28.0" prefWidth="109.0" text="Raw Materials" />
+																	</children>
+																</VBox>
+																<VBox fx:id="vBoxRawMaterials" layoutX="-117.0" layoutY="20.0" prefHeight="92.0" prefWidth="438.0" spacing="3.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+																	<children>
+																		<ComboBox prefHeight="28.0" prefWidth="280.0" />
+                                          <ComboBox prefHeight="28.0" prefWidth="280.0" />
+      																<HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="239.0" spacing="3.0">
+      																	<children>
+      																				<Label prefHeight="17.0" prefWidth="28.0" text="Unit" />
+                                                <ComboBox fx:id="cmbRawMaterialsUnit" prefHeight="28.0" prefWidth="97.0" />
+      																				<Label prefHeight="17.0" prefWidth="24.0" text="Qty">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+      																				<TextField fx:id="txtRawMaterialsQuantity" prefHeight="28.0" prefWidth="45.0" />
+      																		<Button fx:id="btnRawMaterialsAdd" mnemonicParsing="false" onAction="#btnRawMaterialsAddAction" prefHeight="28.0" prefWidth="62.0" text="Add">
+      																			<HBox.margin>
+      																				<Insets />
+      																			</HBox.margin>
+      																		</Button>
+      																	</children>
+      																</HBox>
+																	</children>
+																</VBox>
+																<TableView fx:id="tableRawMaterials" layoutX="15.0" layoutY="117.0" onMouseClicked="#rawMaterialsListTableClickAction" prefHeight="369.0" prefWidth="522.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="110.0">
+																	<columns>
+                                          <TableColumn fx:id="rawMaterialsItemNameCol" minWidth="170.0" prefWidth="169.0" text="Item Name" />
+																		<TableColumn fx:id="rawMaterialsNameCol" minWidth="150.0" prefWidth="168.0" text="Raw Materials" />
+																		<TableColumn fx:id="rawMaterialsUnitCol" minWidth="80.0" prefWidth="83.0" text="Unit" />
+																		<TableColumn fx:id="rawMaterialsUnitQtyCol" minWidth="50.0" prefWidth="55.0" text="Unit Qty" />
+                                          <TableColumn fx:id="rawMaterialsQuantityCol" minWidth="50.0" prefWidth="56.0" text="Quantity" />
+																	</columns>
+																</TableView>
+											</children>
+                                 <padding>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </padding>
+										</AnchorPane>
+									</content>
+								</Tab>
+							</tabs>
+						</TabPane>
+						<HBox alignment="TOP_CENTER" layoutX="-3.0" prefHeight="30.0" prefWidth="543.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<children>
+								<VBox fx:id="vBoxFind">
+									<children>
+										<ComboBox prefHeight="28.0" prefWidth="338.0" />
+									</children>
+								</VBox>
+								<Button fx:id="btnFind" mnemonicParsing="false" onAction="#btnFindAction" prefHeight="28.0" prefWidth="50.0" text="Find" />
+							</children>
+						</HBox>
+					</children>
+					<HBox.margin>
+						<Insets bottom="10.0" right="10.0" top="10.0" />
+					</HBox.margin>
+				</AnchorPane>
+			</children>
+		</HBox>
+	</children>
+</AnchorPane>

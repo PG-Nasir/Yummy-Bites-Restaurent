@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StockCatagoryRpt" language="groovy" pageWidth="612" pageHeight="1008" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="9">
+	<property name="ireport.zoom" value="1.948717100000051"/>
+	<property name="ireport.x" value="313"/>
+	<property name="ireport.y" value="147"/>
+	<parameter name="orgName" class="java.lang.String"/>
+	<parameter name="orgAddress" class="java.lang.String"/>
+	<parameter name="orgContact" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select *from FnCurrentStockReport() order by catagoryName,itemname]]>
+	</queryString>
+	<field name="itemId" class="java.lang.String"/>
+	<field name="ItemName" class="java.lang.String"/>
+	<field name="CatagoryId" class="java.lang.String"/>
+	<field name="CatagoryName" class="java.lang.String"/>
+	<field name="unit" class="java.lang.String"/>
+	<field name="openingQty" class="java.math.BigDecimal"/>
+	<field name="purchaseQty" class="java.math.BigDecimal"/>
+	<field name="purchaseRQty" class="java.math.BigDecimal"/>
+	<field name="kitchenIssue" class="java.math.BigDecimal"/>
+	<field name="kitchenReturn" class="java.math.BigDecimal"/>
+	<field name="wastageQty" class="java.math.BigDecimal"/>
+	<field name="SaleQty" class="java.math.BigDecimal"/>
+	<field name="SaleRQty" class="java.math.BigDecimal"/>
+	<field name="adjustmentInQty" class="java.math.BigDecimal"/>
+	<field name="adjustmentOutQty" class="java.math.BigDecimal"/>
+	<field name="closingQty" class="java.math.BigDecimal"/>
+	<variable name="topqty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{openingQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="tpurqty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{purchaseQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="tpurRqty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{purchaseRQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="twastqty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{wastageQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="tsaleqty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{SaleQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="tsalerQty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{SaleRQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="cqty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{closingQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="tAdjInQty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{adjustmentInQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="tAdjOutQty" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{adjustmentOutQty}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Rows" class="java.lang.Number" resetType="Group" resetGroup="CatRpt" calculation="Sum">
+		<variableExpression><![CDATA[1]]></variableExpression>
+	</variable>
+	<variable name="tKitchenIssue" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{kitchenIssue}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="tKitchenReturn" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{kitchenReturn}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="CatRpt">
+		<groupExpression><![CDATA[$F{CatagoryName}]]></groupExpression>
+		<groupHeader>
+			<band height="15">
+				<textField>
+					<reportElement x="23" y="1" width="168" height="14"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{CatagoryName}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="58" width="204" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[All Item Stock Position]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="30" width="575" height="13"/>
+				<textElement textAlignment="Center" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{orgAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="43" width="575" height="13"/>
+				<textElement textAlignment="Center" markup="none">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{orgContact}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="2" width="575" height="32"/>
+				<textElement textAlignment="Center" markup="none">
+					<font size="22"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{orgName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="572" height="1" forecolor="#999999"/>
+			</line>
+			<line>
+				<reportElement x="0" y="19" width="572" height="1" forecolor="#999999"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="254" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="191" y="1" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="511" y="1" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement x="571" y="1" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="223" y="1" width="31" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pur. Qty.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="1" width="22" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="192" y="1" width="30" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Opening Qty.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="512" y="1" width="30" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales R. Qty.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="544" y="1" width="27" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Closing Qty.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="23" y="0" width="1" height="20"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="24" y="1" width="167" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="372" y="1" width="32" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adj. In Qty.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="222" y="1" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="255" y="1" width="44" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pur. R. Qty.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="542" y="1" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="474" y="1" width="37" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales Qty.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="371" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement x="404" y="1" width="1" height="19"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="405" y="1" width="34" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adj. Out Qty.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="440" y="1" width="33" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Wastage]]></text>
+			</staticText>
+			<line>
+				<reportElement x="439" y="1" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement x="473" y="1" width="1" height="19"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="300" y="1" width="38" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kitchen Issue]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="339" y="1" width="32" height="18" forecolor="#FFFFFF" backcolor="#666666"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Kitchen Return]]></text>
+			</staticText>
+			<line>
+				<reportElement x="299" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="338" y="0" width="1" height="20"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-1" width="572" height="1" forecolor="#999999"/>
+			</line>
+			<line>
+				<reportElement x="0" y="15" width="572" height="1" forecolor="#999999"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="16"/>
+			</line>
+			<line>
+				<reportElement x="222" y="-1" width="1" height="16"/>
+			</line>
+			<line>
+				<reportElement x="191" y="-1" width="1" height="16"/>
+			</line>
+			<line>
+				<reportElement x="511" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement x="571" y="0" width="1" height="15"/>
+			</line>
+			<textField pattern="###0;-###0">
+				<reportElement x="1" y="0" width="22" height="15"/>
+				<box leftPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{Rows}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="192" y="0" width="30" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{openingQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="224" y="0" width="30" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{purchaseQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="476" y="0" width="35" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{SaleQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="544" y="0" width="28" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{closingQty}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="439" y="-1" width="1" height="16"/>
+			</line>
+			<line>
+				<reportElement x="474" y="-1" width="1" height="16"/>
+			</line>
+			<textField pattern="#,##0">
+				<reportElement x="512" y="0" width="30" height="15"/>
+				<box rightPadding="2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{SaleRQty}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="23" y="-1" width="1" height="16"/>
+			</line>
+			<textField>
+				<reportElement x="24" y="0" width="167" height="15"/>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ItemName}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="254" y="0" width="1" height="15"/>
+			</line>
+			<textField pattern="#,##0">
+				<reportElement x="255" y="0" width="44" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{purchaseRQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="373" y="0" width="30" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{adjustmentInQty}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="542" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement x="404" y="0" width="1" height="16"/>
+			</line>
+			<line>
+				<reportElement x="371" y="0" width="1" height="15"/>
+			</line>
+			<textField pattern="###0">
+				<reportElement x="405" y="0" width="34" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{adjustmentOutQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement x="440" y="0" width="34" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{wastageQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="300" y="0" width="38" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{kitchenIssue}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="299" y="0" width="1" height="15"/>
+			</line>
+			<line>
+				<reportElement x="338" y="0" width="1" height="15"/>
+			</line>
+			<textField pattern="#,##0">
+				<reportElement x="339" y="0" width="32" height="15"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{kitchenReturn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="19" splitType="Stretch">
+			<textField pattern="#,##0">
+				<reportElement x="191" y="0" width="31" height="15"/>
+				<box>
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{topqty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="223" y="0" width="30" height="15"/>
+				<box>
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tpurqty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="255" y="0" width="44" height="15"/>
+				<box>
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tpurRqty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="372" y="0" width="32" height="15"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tAdjInQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="476" y="0" width="35" height="15"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tsaleqty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="511" y="0" width="31" height="15"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tsalerQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="544" y="0" width="28" height="15"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{cqty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="405" y="0" width="33" height="15"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tAdjOutQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="440" y="0" width="35" height="15"/>
+				<box rightPadding="2">
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{twastqty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="300" y="0" width="38" height="15"/>
+				<box>
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tKitchenIssue}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0">
+				<reportElement x="339" y="0" width="32" height="15"/>
+				<box>
+					<bottomPen lineWidth="2.0" lineStyle="Double"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Float"><![CDATA[$V{tpurRqty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="12" width="98" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[E-mail: info@cursorbd.com]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="494" y="12" width="70" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="12" width="75" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Developed By-Cursor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="12" width="90" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[web: www.cursorbd.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="12" width="20" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

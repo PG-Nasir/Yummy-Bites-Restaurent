@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.main.MainFrameController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+               <menus>
+                  <Menu fx:id="menuSetup" mnemonicParsing="false" text="Setup">
+                    <items>
+                      <MenuItem fx:id="menuItemSupplierCreate" mnemonicParsing="false" onAction="#setSupplierCreate" text="Supplier Create" />
+                        <MenuItem fx:id="menuItemCustomerCreate" mnemonicParsing="false" onAction="#setCustomerCreate" text="Customer Create" />
+                        <MenuItem fx:id="menuItemCategoryAndItem" mnemonicParsing="false" onAction="#setCategoryAndItemCreate" text="Category And Item Create" />
+                        <MenuItem fx:id="menuItemItemStockAdjustment" mnemonicParsing="false" onAction="#setItemStockAdjustment" text="Item Stock Adjustment" />
+                        <MenuItem fx:id="menuItemManagement" mnemonicParsing="false" onAction="#setManagement" text="Management" />
+                        <MenuItem fx:id="menuItemOrganizationInfoSet" mnemonicParsing="false" onAction="#setOrganizationInformationSet" text="Organization Information Set" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menuTrading" mnemonicParsing="false" text="Trading">
+                     <items>
+                        <MenuItem fx:id="menuItemBilling" mnemonicParsing="false" onAction="#setBilling" text="Billing" />
+                        <MenuItem fx:id="menuItemPurchase" mnemonicParsing="false" onAction="#setPurchase" text="Purchase" />
+                        <MenuItem fx:id="menuItemPurchaseReturn" mnemonicParsing="false" onAction="#setPurchaseReturn" text="Purchase Return" />
+                        <MenuItem fx:id="menuKitchenIssue" mnemonicParsing="false" onAction="#setKitchenIssue" text="Kitchen Issue" />
+                        <MenuItem fx:id="menuKitchenReturn" mnemonicParsing="false" onAction="#setKitchenReturn" text="Kitchen Return" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuAccounts" mnemonicParsing="false" text="Accounts">
+                     <items>
+                        <MenuItem fx:id="menuItemCashPayment" mnemonicParsing="false" onAction="#setCashPayment" text="Cash Payment" />
+                        <MenuItem fx:id="menuItemCashRecived" mnemonicParsing="false" onAction="#setCashRecived" text="Cash Recived" />
+                        <MenuItem fx:id="menuItemBankPayment" mnemonicParsing="false" onAction="#setBankPayment" text="Bank Payment" />
+                        <MenuItem fx:id="menuItemBankRecived" mnemonicParsing="false" onAction="#setBankRecived" text="Bank Recived" />
+                        <MenuItem fx:id="menuItemLedgerAndHeadCreate" mnemonicParsing="false" onAction="#setHeadAndLeadgerCreate" text="Head And Ledger Create" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuReport" mnemonicParsing="false" text="Report">
+                     <items>
+                        <MenuItem fx:id="menuItemTradingReport" mnemonicParsing="false" text="Trading Report" />
+                        <MenuItem fx:id="menuItemAccountsReport" mnemonicParsing="false" text="Accounts Report" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuNotification" mnemonicParsing="false" text="Notification">
+                     <items>
+                        <MenuItem fx:id="menuItemStockNotification" mnemonicParsing="false" text="Item Stock Notification" />
+                     </items>
+                  </Menu>
+                  <Menu fx:id="menuSettings" mnemonicParsing="false" text="Settings">
+                     <items>
+                        <MenuItem fx:id="menuItemUserCreate" mnemonicParsing="false" onAction="#setUserCreate" text="User Create" />
+                        <MenuItem fx:id="menuItemUserAuthentication" mnemonicParsing="false" onAction="#setUserAuthentication" text="User Authentication" />
+                        <MenuItem fx:id="menuItemMyProfile" mnemonicParsing="false" onAction="#setMyProfile" text="My Profile" />
+                        <MenuItem fx:id="menuItemLogOut" mnemonicParsing="false" onAction="#logOutAction" text="LogOut" />
+                     </items>
+                  </Menu>
+               </menus></MenuBar>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="683.0" fitWidth="1366.0" layoutY="-1.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../image/icon/cursor.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button layoutX="1300.0" layoutY="7.0" mnemonicParsing="false" onAction="#logOutAction" text="Logout" />
+                        <Button layoutX="1262.0" layoutY="7.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="30.0">
+                           <graphic>
+                              <ImageView fitHeight="32.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../image/icon/notification.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="parentPane" layoutY="42.0" prefHeight="658.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <SplitPane dividerPositions="0.1436950146627566" layoutX="101.0" layoutY="171.0" prefHeight="660.0" prefWidth="1366.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <Accordion fx:id="accordion" prefHeight="658.0" prefWidth="360.0">
+                                <panes>
+                                  <TitledPane fx:id="titlePaneSetup" animated="false" text="Setup">
+                                    <content>
+                                          <AnchorPane>
+                                             <children>
+                                                <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="533.0" prefWidth="193.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <content>
+                                                  <AnchorPane prefHeight="512.0" prefWidth="172.0">
+                                                         <children>
+                                                            <VBox fx:id="vBoxSetup" prefHeight="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Button fx:id="btnSupplierCreate" mnemonicParsing="false" onAction="#setSupplierCreate" prefHeight="70.0" prefWidth="174.0" text="Supplier Create" />
+                                                                  <Button fx:id="btnCusotmerCreate" mnemonicParsing="false" onAction="#setCustomerCreate" prefHeight="70.0" prefWidth="174.0" text="Customer Create" />
+                                                                  <Button fx:id="btnCategoryAndItemCreate" mnemonicParsing="false" onAction="#setCategoryAndItemCreate" prefHeight="70.0" prefWidth="174.0" text="Category And Item Create" />
+                                                                  <Button fx:id="btnItemStockAdjustment" mnemonicParsing="false" onAction="#setItemStockAdjustment" prefHeight="70.0" prefWidth="174.0" text="Item Stock Adjustment" />
+                                                                  <Button fx:id="btnManagement" mnemonicParsing="false" onAction="#setManagement" prefHeight="70.0" prefWidth="174.0" text="Management" />
+                                                                  <Button fx:id="btnOrganizationInfoSet" mnemonicParsing="false" onAction="#setOrganizationInformationSet" prefHeight="70.0" prefWidth="174.0" text="Organization Infromation Set" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane fx:id="titlePaneTrading" animated="false" text="Resturent Traadings">
+                                    <content>
+                                          <AnchorPane>
+                                             <children>
+                                                <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="533.0" prefWidth="193.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <content>
+                                                  <AnchorPane prefHeight="512.0" prefWidth="171.0">
+                                                         <children>
+                                                            <VBox fx:id="vBoxTrading" prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Button fx:id="btnBilling" mnemonicParsing="false" onAction="#setBilling" prefHeight="70.0" prefWidth="191.0" text="Billing" />
+                                                                  <Button fx:id="btnPurchase" mnemonicParsing="false" onAction="#setPurchase" prefHeight="70.0" prefWidth="191.0" text="Purchase" />
+                                                                  <Button fx:id="btnPurchaseReturn" mnemonicParsing="false" onAction="#setPurchaseReturn" prefHeight="70.0" prefWidth="191.0" text="Purchase Return" />
+                                                                  <Button fx:id="btnKitchenIssue" mnemonicParsing="false" onAction="#setKitchenIssue" prefHeight="70.0" prefWidth="191.0" text="Kitchen Issue" />
+                                                                  <Button fx:id="btnKitchenReturn" mnemonicParsing="false" onAction="#setKitchenReturn" prefHeight="70.0" prefWidth="191.0" text="Kitchen Return" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                  <TitledPane fx:id="titlePaneAccounts" animated="false" text="Accounts">
+                                    <content>
+                                          <AnchorPane>
+                                             <children>
+                                                <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="533.0" prefWidth="193.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <content>
+                                                  <AnchorPane prefHeight="512.0" prefWidth="172.0">
+                                                         <children>
+                                                            <VBox fx:id="vBoxAccounts" prefHeight="512.0" prefWidth="172.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Button fx:id="btnCashPayment" mnemonicParsing="false" onAction="#setCashPayment" prefHeight="70.0" prefWidth="177.0" text="Cash Payment" />
+                                                                  <Button fx:id="btnCashRecived" mnemonicParsing="false" onAction="#setCashRecived" prefHeight="70.0" prefWidth="177.0" text="Cash Recived" />
+                                                                  <Button fx:id="btnBankPayment" mnemonicParsing="false" onAction="#setBankPayment" prefHeight="70.0" prefWidth="177.0" text="Bank Payment" />
+                                                                  <Button fx:id="btnBankRecived" mnemonicParsing="false" onAction="#setBankRecived" prefHeight="70.0" prefWidth="177.0" text="Bank Recived" />
+                                                                  <Button fx:id="btnHeadAndLedgerCreate" mnemonicParsing="false" onAction="#setHeadAndLeadgerCreate" prefHeight="70.0" prefWidth="177.0" text="Head And Ledger Create" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                    </content>
+                                  </TitledPane>
+                                    <TitledPane fx:id="titlePaneReport" animated="false" text="Reports">
+                                      <content>
+                                          <AnchorPane>
+                                             <children>
+                                                <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="533.0" prefWidth="222.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <content>
+                                                    <AnchorPane prefHeight="511.0" prefWidth="172.0">
+                                                         <children>
+                                                            <VBox fx:id="vBoxReport" prefHeight="511.0" prefWidth="151.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Button fx:id="btnTradingReport" mnemonicParsing="false" onAction="#setTradingReport" prefHeight="70.0" prefWidth="178.0" text="Tranding Report" />
+                                                                  <Button fx:id="btnAccountsReport" mnemonicParsing="false" onAction="#setAccountsReport" prefHeight="70.0" prefWidth="178.0" text="Accounts Report" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </TitledPane>
+                                    <TitledPane fx:id="titlePaneSettings" animated="false" text="Settings">
+                                       <content>
+                                          <AnchorPane>
+                                             <children>
+                                                <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="533.0" prefWidth="193.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <content>
+                                                      <AnchorPane prefHeight="441.0" prefWidth="151.0">
+                                                         <children>
+                                                            <VBox fx:id="vBoxSettings" layoutY="8.0" prefHeight="441.0" prefWidth="151.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <children>
+                                                                  <Button fx:id="btnUserCreate" mnemonicParsing="false" onAction="#setUserCreate" prefHeight="70.0" prefWidth="200.0" text="User Create" />
+                                                                  <Button fx:id="btnUserAuthentication" mnemonicParsing="false" onAction="#setUserAuthentication" prefHeight="70.0" prefWidth="200.0" text="User Authentication" />
+                                                                  <Button fx:id="btnMyProfile" mnemonicParsing="false" onAction="#setMyProfile" prefHeight="70.0" prefWidth="200.0" text="My Profile" />
+                                                                  <Button fx:id="btnLogOut" mnemonicParsing="false" onAction="#logOutAction" prefHeight="70.0" prefWidth="200.0" text="LogOut" />
+                                                               </children>
+                                                            </VBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </TitledPane>
+                                </panes>
+                              </Accordion>
+                              <TabPane fx:id="tabPane" prefHeight="658.0" prefWidth="1107.0" />
+                           </items>
+                        </SplitPane>
+                     </children></AnchorPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

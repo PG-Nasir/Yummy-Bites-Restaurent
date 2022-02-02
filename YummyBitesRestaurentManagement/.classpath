@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/autosuggestion.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/barbecue-1.5-beta1.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/barcode.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/barcode4j.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-anim-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-awt-util-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-bridge-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-css-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-dom-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-ext-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-gvt-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-js-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-parser-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-script-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-svg-dom-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-util-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/batik-xml-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/com.businessrefinery.barcode.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/comm-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/commons-beanutils-1.8.2.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/controlsfx-8.40.14.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/CrystaJar.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/db2jcc.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/derbyclient-10.2.2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/groovy-all-1.5.5.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jasperreports-3.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jasperreports-extensions-3.5.3.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jasperreports-fonts-3.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jasperreports-fonts-6.0.0 (1).jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/javax.persistence.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jcifs-1.3.19.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/joda-time-2.3.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/joda-time-2.3-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/joda-time-2.3-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jsch-0.1.55.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jSerialComm-1.3.11.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jtds-1.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/jxl-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/LGoodDatePicker-8.2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/LGoodDatePicker-8.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/LGoodDatePicker-8.3.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/mysql-connector-java-5.1.6.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/poi-3.9.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/postgresql-42.2.5.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/Required Jar.zip"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/sqlite-jdbc-3.8.11.2.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/SuggestBox.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/Suggestion.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/suggestionlist.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/swingx-all-1.6.4.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/xalan-2.6.0.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/xml-apis-1.3.04.jar"/>
+	<classpathentry kind="lib" path="D:/Development Software Tool/Required Jar/xml-apis-ext-1.3.04.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

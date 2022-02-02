@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="625.0" prefWidth="1281.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.trading.PurchaseReturnController">
+   <children>
+      <HBox alignment="TOP_CENTER" layoutY="594.0" prefHeight="36.0" prefWidth="354.0" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="580.0">
+         <children>
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#btnSaveAction" prefHeight="30.0" prefWidth="80.0" text="Save" />
+            <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#btnEditAction" prefHeight="30.0" prefWidth="80.0" text="Edit" />
+            <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#btnPrintAction" prefHeight="30.0" prefWidth="80.0" text="Print" />
+            <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshAction" prefHeight="30.0" prefWidth="80.0" text="Refresh" />
+         </children>
+      </HBox>
+      <VBox layoutX="5.0" layoutY="45.0" prefHeight="129.0" prefWidth="66.0" spacing="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Button fx:id="btnFind" mnemonicParsing="false" onAction="#btnFindAction" prefHeight="28.0" prefWidth="64.0" text="Find" />
+            <Label prefHeight="28.0" prefWidth="110.0" text="Invoice No:" />
+            <Label prefHeight="28.0" prefWidth="110.0" text="Supplier:" />
+            <Label prefHeight="28.0" prefWidth="110.0" text="Date:" />
+         </children>
+      </VBox>
+      <VBox fx:id="vBoxSupplier" layoutX="69.0" layoutY="45.0" prefHeight="129.0" prefWidth="213.0" spacing="5.0" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <ComboBox prefHeight="28.0" prefWidth="213.0" />
+            <TextField fx:id="txtInvoiceNO" editable="false" prefHeight="28.0" prefWidth="213.0" />
+            <ComboBox prefHeight="28.0" prefWidth="214.0" />
+            <DatePicker fx:id="date" prefHeight="28.0" prefWidth="215.0" />
+         </children>
+      </VBox>
+      <HBox layoutX="5.0" layoutY="150.0" prefHeight="53.0" prefWidth="1050.0" spacing="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="140.0">
+         <children>
+            <VBox fx:id="vBoxItemName" prefHeight="53.0" prefWidth="432.0" spacing="2.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="285.0" text="Product (Projected Name)" />
+                  <ComboBox prefHeight="28.0" prefWidth="435.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="53.0" prefWidth="125.0" spacing="2.0">
+               <children>
+                  <Label text="Unit" />
+                  <ComboBox fx:id="cmbUnit" prefHeight="28.0" prefWidth="150.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="53.0" prefWidth="92.0" spacing="2.0">
+               <children>
+                  <Label text="Return Quantity" />
+                  <TextField fx:id="txtQuantity" prefHeight="28.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="53.0" prefWidth="113.0" spacing="2.0">
+               <children>
+                  <Label text="Price" />
+                  <TextField fx:id="txtPrice" prefHeight="28.0" />
+               </children>
+            </VBox>
+            <VBox prefHeight="53.0" prefWidth="66.0" spacing="2.0">
+               <children>
+                  <Label text="Discount" />
+                  <TextField fx:id="txtDiscount" prefHeight="28.0" />
+               </children>
+            </VBox>
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAction" prefHeight="28.0" prefWidth="73.0" text="Add">
+               <HBox.margin>
+                  <Insets top="19.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="5.0" layoutY="200.0" prefHeight="357.0" prefWidth="1050.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="190.0">
+         <children>
+            <TableView fx:id="tableItemDetails" layoutX="408.0" layoutY="-17.0" onMouseClicked="#ProductTableClickAction" prefHeight="339.0" prefWidth="933.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="itemIdCol" minWidth="46.0" prefWidth="46.0" text="Item Id" />
+                  <TableColumn fx:id="itemNameCol" minWidth="280.0" prefWidth="297.9999694824219" text="Item Name" />
+                  <TableColumn fx:id="unitCol" minWidth="60.0" prefWidth="79.00003051757812" text="Unit" />
+                  <TableColumn fx:id="unitQuantityCol" minWidth="50.0" prefWidth="74.0" text="Unit Qty." />
+                  <TableColumn fx:id="quantityCol" minWidth="50.0" prefWidth="44.0" text="Quantity" />
+                  <TableColumn fx:id="unitPriceCol" minWidth="60.0" prefWidth="98.0" text="Unit Price" />
+                  <TableColumn fx:id="priceCol" minWidth="60.0" prefWidth="79.0" text="Price" />
+                  <TableColumn fx:id="totalAmountCol" minWidth="70.0" prefWidth="88.0" text="Total Amount" />
+                  <TableColumn fx:id="discountCol" minWidth="60.0" prefWidth="54.0" text="Discount" />
+                  <TableColumn fx:id="netAmountCol" minWidth="70.0" prefWidth="121.0" text="Net Amount" />
+                  <TableColumn fx:id="deleteCol" minWidth="50.0" prefWidth="55.0" text="Delete" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="1060.0" layoutY="200.0" prefHeight="408.0" prefWidth="92.0" spacing="3.0" AnchorPane.rightAnchor="129.0" AnchorPane.topAnchor="190.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="122.0" text="Total Amount" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Vat(%)" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Gross Amont" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Discount (%)" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Percent Discount" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Manual Discount" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Total Discount" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Net Amount" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Paid Amount" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Payment Method" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Payment Ledger" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Check NO:" />
+            <Label prefHeight="28.0" prefWidth="122.0" text="Check Pass Date:" />
+         </children>
+      </VBox>
+      <VBox layoutX="1150.0" layoutY="200.0" prefHeight="408.0" prefWidth="125.0" spacing="3.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="190.0">
+         <children>
+            <TextField fx:id="txtTotalAmount" editable="false" prefHeight="28.0" />
+            <TextField fx:id="txtVat" onKeyReleased="#netAmountCount" prefHeight="28.0" />
+            <TextField fx:id="txtGrossAmount" editable="false" prefHeight="28.0" />
+            <TextField fx:id="txtDiscountPercent" onKeyReleased="#netAmountCount" prefHeight="28.0" />
+            <TextField fx:id="txtPercentDiscount" editable="false" prefHeight="28.0" />
+            <TextField fx:id="txtManualDiscount" prefHeight="28.0" />
+            <TextField fx:id="txtTotalDiscount" editable="false" prefHeight="28.0" />
+            <TextField fx:id="txtNetAmount" editable="false" prefHeight="28.0" />
+            <TextField fx:id="txtPaidAmount" prefHeight="28.0" />
+            <ComboBox fx:id="cmbPayementMethod" prefHeight="28.0" prefWidth="150.0" />
+            <ComboBox fx:id="cmbPaymentLedger" disable="true" prefHeight="28.0" prefWidth="150.0" />
+            <TextField fx:id="txtCheckNo" disable="true" prefHeight="28.0" />
+            <DatePicker fx:id="datePass" disable="true" editable="false" prefHeight="28.0" />
+         </children>
+      </VBox>
+      <AnchorPane layoutX="5.0" layoutY="560.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="226.0" AnchorPane.topAnchor="550.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="55.0" text="Remarks:" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <VBox fx:id="vBoxRemarks" layoutX="53.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TextField prefHeight="28.0" prefWidth="997.0" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="922.0" layoutY="14.0" prefHeight="94.0" prefWidth="691.0" AnchorPane.leftAnchor="585.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <TableView fx:id="tablePaymentDetails" layoutY="-29.0" prefHeight="171.0" prefWidth="584.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="dateCol" prefWidth="89.0" text="Date" />
+                  <TableColumn fx:id="paymentTypeCol" prefWidth="90.0" text="Payment Type" />
+                  <TableColumn fx:id="checkNoCol" minWidth="6.0" prefWidth="104.0" text="Check No" />
+                  <TableColumn fx:id="passDateCol" prefWidth="102.0" text="Pass Date" />
+                  <TableColumn fx:id="amountCol" prefWidth="115.0" text="Amount" />
+                  <TableColumn fx:id="dueCol" minWidth="0.0" prefWidth="99.0" text="Due" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <HBox layoutX="1060.0" layoutY="102.0" prefHeight="28.0" prefWidth="691.0" spacing="5.0" AnchorPane.leftAnchor="585.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="102.0">
+         <children>
+            <ComboBox fx:id="cmbDuePayementMetod" prefHeight="26.0" prefWidth="120.0" promptText="Pay. Method" />
+            <ComboBox fx:id="cmbDuePaymentLedger" disable="true" prefHeight="26.0" prefWidth="121.0" promptText="Pay. Ledger" />
+            <TextField fx:id="txtDueCheckNo" disable="true" prefHeight="26.0" prefWidth="148.0" promptText="Check No" />
+            <DatePicker fx:id="dateDuePass" disable="true" prefHeight="26.0" prefWidth="124.0" promptText="Pass Date" />
+            <TextField fx:id="txtDueAmount" prefHeight="26.0" prefWidth="93.0" promptText="Amount" />
+            <Button fx:id="btnPay" mnemonicParsing="false" onAction="#btnDuePayAction" prefHeight="26.0" prefWidth="60.0" text="Pay" />
+         </children>
+      </HBox>
+      <AnchorPane layoutX="294.0" layoutY="5.0" AnchorPane.leftAnchor="294.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <TableView fx:id="tableInvoiceList" onMouseClicked="#invoiceListTableClickAction" prefHeight="129.0" prefWidth="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="invoiceNOCol" prefWidth="70.0" text="Invoice No" />
+                  <TableColumn fx:id="supplierNameCol" prefWidth="131.0" text="Supplier" />
+                  <TableColumn fx:id="totalAmountInvoiceListCol" prefWidth="83.0" text="Total Amount" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

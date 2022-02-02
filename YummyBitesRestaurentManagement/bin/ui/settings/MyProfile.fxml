@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="510.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.settings.MyProfileController">
+   <padding>
+      <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <VBox layoutX="146.0" layoutY="113.0" prefHeight="483.0" prefWidth="567.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="461.0" prefWidth="506.0" spacing="5.0">
+               <children>
+                  <VBox prefHeight="393.0" prefWidth="116.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="172.0" text="User Id:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Name:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Display Name:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Department:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="User Name:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Date Of Birth:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Religion:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Present Address:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Parmanant Address:">
+                           <VBox.margin>
+                              <Insets top="28.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Current Password:">
+                           <VBox.margin>
+                              <Insets top="28.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="28.0" prefWidth="172.0" text="New Password:" />
+                        <Label prefHeight="28.0" prefWidth="172.0" text="Confirm Password:" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="397.0" prefWidth="222.0" spacing="5.0">
+                     <children>
+                        <TextField fx:id="txtUserId" editable="false" prefHeight="28.0" />
+                        <TextField fx:id="txtName" editable="false" prefHeight="28.0" />
+                        <TextField fx:id="txtDisplayName" editable="false" prefHeight="28.0" />
+                        <TextField fx:id="txtDepartment" editable="false" prefHeight="28.0" />
+                        <TextField fx:id="txtUserName" prefHeight="28.0" />
+                        <DatePicker fx:id="dateOfBirth" prefHeight="28.0" prefWidth="223.0" />
+                        <VBox>
+                           <children>
+                              <ComboBox fx:id="cmbRegion" prefHeight="28.0" prefWidth="217.0" />
+                           </children>
+                        </VBox>
+                        <TextArea fx:id="txtPresentAddress" prefHeight="56.0" prefWidth="222.0" />
+                        <TextArea fx:id="txtParmanentAddress" prefHeight="56.0" prefWidth="222.0" />
+                        <PasswordField fx:id="txtCurrentPassword" prefHeight="28.0" />
+                        <PasswordField fx:id="txtNewPassword" prefHeight="28.0" />
+                        <PasswordField fx:id="txtConfirmPassword" prefHeight="28.0" />
+                     </children>
+                  </VBox>
+                  <AnchorPane prefHeight="460.0" prefWidth="165.0">
+                     <children>
+                        <Label layoutX="7.0" prefHeight="161.0" prefWidth="151.0" style="-fx-border-color: #CDCDCD;" />
+                        <ImageView fitHeight="160.0" fitWidth="150.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btnUpload" layoutX="28.0" layoutY="168.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="110.0" text="Upload" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="41.0" prefWidth="506.0" spacing="5.0">
+               <children>
+                  <Button fx:id="btnChangePassword" mnemonicParsing="false" onAction="#btnChangePassword" prefWidth="110.0" text="Change Password" />
+                  <Button fx:id="btnEditProfile" mnemonicParsing="false" onAction="#btnEditProfile" prefWidth="110.0" text="Edit Profile" />
+                  <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#btnRefreshAction" prefWidth="110.0" text="Refresh" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,9 @@
+.center-align { 
+  -fx-alignment: center; 
+} 
+.center-right-align { 
+  -fx-alignment: center-right; 
+} 
+.center-left-align { 
+  -fx-alignment: center-left; 
+} 

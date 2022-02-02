@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.accounts.CashRecivedController">
+   <children>
+      <VBox layoutX="189.0" layoutY="100.0" prefHeight="600.0" prefWidth="900.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="900.0" spacing="10.0">
+               <children>
+                  <VBox fx:id="vBoxFind">
+                     <children>
+                        <ComboBox prefHeight="28.0" prefWidth="183.0" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnFind" mnemonicParsing="false" onAction="#findAction" prefHeight="28.0" text="Find" />
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <AnchorPane prefHeight="522.0" prefWidth="1180.0">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="table" layoutX="34.0" layoutY="36.0" onMouseClicked="#tableClickAction" prefHeight="433.0" prefWidth="880.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0">
+                     <columns>
+                        <TableColumn fx:id="transectionIdCol" prefWidth="86.0" text="Transection Id" />
+                        <TableColumn fx:id="voucherNoCol" prefWidth="84.0" text="Voucher No" />
+                        <TableColumn fx:id="dateCol" prefWidth="97.0" text="Date" />
+                        <TableColumn fx:id="debitLedgerCol" prefWidth="210.0" text="Debit Ladger" />
+                        <TableColumn fx:id="creditLedgerCol" prefWidth="231.0" text="Credit Ladger" />
+                        <TableColumn fx:id="amountCol" prefWidth="123.0" text="Amount" />
+                        <TableColumn fx:id="deleteCol" prefWidth="59.0" text="Delete" />
+                     </columns>
+                  </TableView>
+                  <HBox prefHeight="59.0" prefWidth="880.0" spacing="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox prefHeight="59.0" prefWidth="114.0">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="140.0" text="Voucher No" />
+                              <TextField fx:id="txtVoucherNo" editable="false" prefHeight="28.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="59.0" prefWidth="149.0">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="140.0" text="Date" />
+                              <DatePicker fx:id="date" prefHeight="28.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="59.0" prefWidth="210.0">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="140.0" text="Debit Ladger" />
+                              <VBox fx:id="vBoxDebitLedger">
+                                 <children>
+                                    <ComboBox prefHeight="28.0" prefWidth="212.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="59.0" prefWidth="222.0">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="140.0" text="Credit Ledger" />
+                              <VBox fx:id="vBoxCreditLedger">
+                                 <children>
+                                    <ComboBox prefHeight="28.0" prefWidth="222.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="59.0" prefWidth="102.0">
+                           <children>
+                              <Label prefHeight="28.0" prefWidth="140.0" text="Amount" />
+                              <TextField fx:id="txtAmount" prefHeight="28.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="59.0" prefWidth="67.0">
+                           <children>
+                              <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#btnAddAction" prefHeight="28.0" prefWidth="69.0" text="Add">
+                                 <VBox.margin>
+                                    <Insets top="28.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutY="499.0" prefHeight="26.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="495.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="45.0" text="Paid To:" />
+                        <TextField fx:id="txtPaidTo" prefHeight="26.0" prefWidth="196.0" />
+                        <Label prefHeight="26.0" prefWidth="120.0" text="Narration/Description:">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="txtNarration" prefHeight="26.0" prefWidth="520.0" />
+                     </children>
+                  </HBox>
+                  <CheckBox fx:id="checkInvoiceRecived" layoutX="885.0" layoutY="30.0" mnemonicParsing="false" text="Sales Invoice Recieved" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="30.0" />
+                  <TableView fx:id="tableInvoiceList" layoutX="888.0" layoutY="99.0" prefHeight="433.0" prefWidth="295.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="invoiceNoCol" prefWidth="50.0" text="Invoice No" />
+                      <TableColumn fx:id="totalAmountCol" prefWidth="48.0" text="Total Amount" />
+                        <TableColumn fx:id="netAmountCol" minWidth="1.0" prefWidth="54.0" text="Net Amount" />
+                        <TableColumn fx:id="paidAmountCol" prefWidth="49.0" text="Paid" />
+                        <TableColumn fx:id="dueAmountCol" prefWidth="64.0" text="Due" />
+                        <TableColumn fx:id="isSelectCol" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" />
+                    </columns>
+                  </TableView>
+                  <HBox layoutX="948.0" layoutY="495.0" prefHeight="28.0" prefWidth="236.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label prefHeight="34.0" prefWidth="114.0" text="Total ReceiveableDue" />
+                        <TextField fx:id="txtTotalReciveableAmount" prefHeight="28.0" prefWidth="114.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="900.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveAction" prefHeight="28.0" prefWidth="80.0" text="Confirm" />
+                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#editAction" prefHeight="28.0" prefWidth="80.0" text="Edit" />
+                  <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#printAction" prefHeight="28.0" prefWidth="80.0" text="Print" />
+                  <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#refreshAction" prefHeight="28.0" prefWidth="80.0" text="Refresh" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

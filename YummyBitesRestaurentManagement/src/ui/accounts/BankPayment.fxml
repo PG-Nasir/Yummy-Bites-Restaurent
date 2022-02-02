@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="801.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.accounts.BankPaymentControllenr">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="801.0" spacing="10.0">
+         <children>
+            <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="900.0" spacing="10.0">
+               <children>
+                  <VBox fx:id="vBoxFind">
+                     <children>
+                        <ComboBox prefHeight="28.0" prefWidth="183.0" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="btnFind" mnemonicParsing="false" onAction="#findAction" prefHeight="28.0" text="Find" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="198.0" prefWidth="781.0">
+               <children>
+                  <VBox prefHeight="326.0" prefWidth="117.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="140.0" text="Voucher No" />
+                        <Label prefHeight="28.0" prefWidth="115.0" text="Date" />
+                        <Label prefHeight="28.0" prefWidth="138.0" text="Bank Account/Ledger:" />
+                        <Label prefHeight="28.0" prefWidth="115.0" text="Debit Ledger Name:" />
+                        <Label prefHeight="28.0" prefWidth="144.0" text="Transection Type:" />
+                        <Label prefHeight="28.0" prefWidth="45.0" text="Paiy To:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="326.0" prefWidth="228.0" spacing="5.0">
+                     <children>
+                        <TextField fx:id="txtVoucherNo" editable="false" prefHeight="28.0" prefWidth="184.0" />
+                        <DatePicker fx:id="date" prefHeight="28.0" />
+                        <VBox fx:id="vBoxCreditLedger">
+                           <children>
+                              <ComboBox prefHeight="28.0" prefWidth="230.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBoxDebitLedger">
+                           <children>
+                              <ComboBox prefHeight="28.0" prefWidth="230.0" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBoxTransectionType">
+                           <children>
+                              <ComboBox prefHeight="28.0" prefWidth="230.0" />
+                           </children>
+                        </VBox>
+                        <TextField fx:id="txtPaidTo" prefHeight="28.0" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="398.0" prefWidth="96.0" spacing="5.0">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="144.0" text="Check Date:">
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="28.0" prefWidth="144.0" text="Check No:">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Label prefHeight="28.0" prefWidth="144.0" text="Amount:" />
+                        <Label prefHeight="28.0" prefWidth="64.0" text="Description:" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="326.0" prefWidth="228.0" spacing="5.0">
+                     <children>
+                        <DatePicker fx:id="checkDate" prefHeight="28.0">
+                           <VBox.margin>
+                              <Insets top="35.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <TextField fx:id="txtCheckNo" prefHeight="28.0" />
+                        <TextField fx:id="txtAmount" prefHeight="28.0" prefWidth="196.0" />
+                        <TextArea fx:id="txtDescription" prefHeight="61.0" prefWidth="228.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="33.0" prefWidth="900.0" spacing="10.0">
+               <children>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#saveAction" prefHeight="28.0" prefWidth="80.0" text="Confirm" />
+                  <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#editAction" prefHeight="28.0" prefWidth="80.0" text="Edit" />
+                  <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#printAction" prefHeight="28.0" prefWidth="80.0" text="Print" />
+                  <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#refreshAction" prefHeight="28.0" prefWidth="80.0" text="Refresh" />
+               </children>
+            </HBox>
+            <AnchorPane prefHeight="290.0" prefWidth="781.0">
+               <children>
+                  <TableView fx:id="table" layoutX="27.0" layoutY="38.0" onMouseClicked="#tableClickAction" prefHeight="221.0" prefWidth="781.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="voucherNoCol" prefWidth="75.0" text="Voucher No" />
+                        <TableColumn fx:id="dateCol" prefWidth="104.0" text="Date" />
+                        <TableColumn fx:id="bankLedgerCol" prefWidth="157.0" text="Bank Ledger" />
+                        <TableColumn fx:id="creditLedgerCol" prefWidth="153.0" text=" Credit Ladger " />
+                        <TableColumn fx:id="checkNoCol" prefWidth="142.0" text="Check No" />
+                        <TableColumn fx:id="amountCol" prefWidth="111.0" text="Amount" />
+                        <TableColumn fx:id="deleteCol" prefWidth="38.0" text="Del" />
+                     </columns>
+                  </TableView>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
